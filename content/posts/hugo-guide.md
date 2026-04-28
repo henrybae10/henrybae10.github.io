@@ -7,12 +7,13 @@ tags: ["개발", "블로그"]
 ---
 
 ## Hugo
- GitHub Pages는 HTML 파일만 서비스하는 웹 호스팅 서비스다. GitHub Pages(이하 GHP)와 연동된 Repository를 Public으로 세팅한다면 무료로 사용할 수 있어 사용하는 사람이 많다.
- GHP의 기본 동작 방식은 사용자가 md 파일을 작성하여 GH에 Push하면 내장된 Jekyll(지킬, 일종의 정적 사이트 생성기)이 md 파일을 HTML로 컴파일하여 GHP 웹서버로 배포해준다.
- 하지만 최근에는 Jekyll 대신 Hugo를 많이 사용한다고 한다. Jekyll에 비해 장점이 많기 때문이다. 하지만 Hugo는 GHP에 내장돼있지 않기 때문에 GitHub Actions라는 지시어를 통해 Push가 실행됐을 때 Hugo를 통해 md 파일을 HTML 파일로 컴파일하고 GHP 웹 서버로 배포하라는 지시를 해줘야한다.
+ GitHub Pages는 HTML 파일만 서비스하는 웹 호스팅 서비스다. GitHub Pages(이하 GHP)와 연동된 Repository를 Public으로 세팅한다면 무료로 사용할 수 있어 사용하는 사람이 많다.  
+ GHP의 기본 동작 방식은 사용자가 md 파일을 작성하여 GH에 Push하면 내장된 Jekyll(지킬, 일종의 정적 사이트 생성기)이 md 파일을 HTML로 컴파일한 후 GHP 웹서버로 배포하게된다.   
+ 하지만 최근에는 Jekyll 대신 Hugo를 많이 사용한다고 한다. Jekyll에 비해 장점이 많기 때문이다. 그런데 Hugo는 GHP에 내장돼있지 않기 때문에 GitHub Actions라는 지시어를 통해 Push가 실행됐을 때 Hugo로 md 파일을 HTML 파일로 컴파일하고 GHP 웹 서버로 배포하라는 지시를 해줘야한다.
  (이런 면에서 md는 HTML을 위한 일종의 날것의 파일이라 생각이 된다.)
 
 |  | Hugo | Jekyll |
+| :--- | :--- | :--- |
 | 기반 언어 | Go | Ruby |
 | 빌드 속도 | 빠름 | 글이 수백개면 느려짐 |
 | 의존성 | 단일 바이너리라 실행 파일 하나면 세팅이 끝남 | Gem 의존성 등 설치할게 많다 |
@@ -48,7 +49,7 @@ hugo
 ```
 
 #### 2-1. GitHub Pages 설정 변경
-GitHub Actions를 킨다. GitHub ACtions란 특정 이벤트(여기서는 GitHub Repository에 Push)가 발생했을 때 GitHub 서버가 미리 정해둔 작업(빌드, 테스트, 배포)를 자동으로 실행해주는 기능이다. 
+GitHub Actions를 킨다. GitHub ACtions란 특정 이벤트(여기서는 GitHub Repository에 Push)가 발생했을 때 GitHub 서버가 미리 정해둔 작업(빌드, 테스트, 배포)를 자동으로 실행해주는 기능이다.  
 Repository 메뉴 -> Settings -> Pages -> Build and deployment -> Source -> GitHub Actions 선택
 
 
