@@ -1,0 +1,10 @@
+baseURL = 'https://henrybae10.github.io/'
+languageCode = 'ko-kr'
+title = 'henry'
+theme = 'PaperMod'
+[frontmatter]
+  date = ["date", "publishDate", "lastmod"]
+  format = "yaml"
+
+[markup.goldmark.renderer]
+  unsafe = true
